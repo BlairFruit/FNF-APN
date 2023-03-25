@@ -255,7 +255,7 @@ class MainMenuState extends MusicBeatState
 			}
 			else if (FlxG.keys.anyJustPressed(folderKeys))
 			{
-				trace("PRESSED THE FUNNY OPEN FOLDER KEY!!!")
+				trace("PRESSED THE FUNNY OPEN FOLDER KEY!!!");
 			}
 			#if desktop
 			else if (FlxG.keys.anyJustPressed(debugKeys))
