@@ -57,6 +57,9 @@ class ControlsSubState extends MusicBeatSubstate {
 		['Up', 'volume_up'],
 		['Down', 'volume_down'],
 		[''],
+		['APN'],
+		['Open Folder', 'folder_open'],
+		[''],
 		['DEBUG'],
 		['Key 1', 'debug_1'],
 		['Key 2', 'debug_2']

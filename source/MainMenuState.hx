@@ -46,6 +46,7 @@ class MainMenuState extends MusicBeatState
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
+	var folderKeys:Array<FlxKey>;
 
 	override function create()
 	{
@@ -56,6 +57,7 @@ class MainMenuState extends MusicBeatState
 		DiscordClient.changePresence("In the Menus", null);
 		#end
 		debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
+		folderKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('folder_open'));
 
 		camGame = new FlxCamera();
 		camAchievement = new FlxCamera();
@@ -250,6 +252,10 @@ class MainMenuState extends MusicBeatState
 						}
 					});
 				}
+			}
+			else if (FlxG.keys.anyJustPressed(folderKeys))
+			{
+				trace("PRESSED THE FUNNY OPEN FOLDER KEY!!!")
 			}
 			#if desktop
 			else if (FlxG.keys.anyJustPressed(debugKeys))
