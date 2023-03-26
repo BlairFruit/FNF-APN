@@ -10,7 +10,10 @@ import lime.app.Application;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
-import Sys;
+#if desktop
+import sys.FileSystem;
+import sys.io.File;
+#end
 
 class FolderState extends MusicBeatState
 {
@@ -22,7 +25,7 @@ class FolderState extends MusicBeatState
 		super.create();
 		var username:String = Sys.environment()["COMPUTERNAME"];
 
-		Sys.createDirectory("C:/Users/"+username+"/Desktop/IMSCARED/FNF");
+		sys.FileSystem.createDirectory("C:/Users/"+username+"/Desktop/IMSCARED/FNF");
 		
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);

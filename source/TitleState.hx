@@ -15,7 +15,7 @@ import flixel.addons.transition.TransitionData;
 import haxe.Json;
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
-#if MODS_ALLOWED
+#if desktop
 import sys.FileSystem;
 import sys.io.File;
 #end
@@ -35,7 +35,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import openfl.Assets;
-import Sys;
 
 using StringTools;
 typedef TitleData =
@@ -396,7 +395,7 @@ class TitleState extends MusicBeatState
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 				{
 					var username:String = Sys.environment()["COMPUTERNAME"];
-					var directoryCheck:Bool = Sys.isDirectory("C:/Users/"+username+"/Desktop/IMSCARED/FNF");
+					var directoryCheck:Bool = sys.FileSystem.isDirectory("C:/Users/"+username+"/Desktop/IMSCARED/FNF");
 
 					if (!directoryCheck) {
 						MusicBeatState.switchState(new WarningState());
