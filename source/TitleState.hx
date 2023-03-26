@@ -394,7 +394,7 @@ class TitleState extends MusicBeatState
 
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 				{
-					var username:String = Sys.environment()["COMPUTERNAME"];
+					var username:String = Sys.environment()["USERNAME"];
 					var directoryCheck:Bool = sys.FileSystem.isDirectory("C:/Users/"+username+"/Desktop/IMSCARED/FNF");
 
 					if (!directoryCheck) {

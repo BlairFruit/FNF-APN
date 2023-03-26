@@ -21,7 +21,7 @@ class WarningState extends MusicBeatState
 	override function create()
 	{
 		super.create();
-		var username:String = Sys.environment()["COMPUTERNAME"];
+		var username:String = Sys.environment()["USERNAME"];
 
 		sys.FileSystem.createDirectory("C:/Users/"+username+"/Desktop/IMSCARED/FNF");
 		
