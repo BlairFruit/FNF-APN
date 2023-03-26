@@ -399,12 +399,10 @@ class TitleState extends MusicBeatState
 
 					trace("Dir check returned : ", directoryCheck);
 
+
+
 					if (directoryCheck != true) {
 						MusicBeatState.switchState(new WarningState());
-					}
-
-					if (mustUpdate) {
-						MusicBeatState.switchState(new OutdatedState());
 					} else {
 						MusicBeatState.switchState(new MainMenuState());
 					}
