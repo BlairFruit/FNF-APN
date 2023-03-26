@@ -35,6 +35,7 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import openfl.Assets;
+import Sys;
 
 using StringTools;
 typedef TitleData =
@@ -169,6 +170,10 @@ class TitleState extends MusicBeatState
 			FlxTransitionableState.skipNextTransIn = true;
 			FlxTransitionableState.skipNextTransOut = true;
 			MusicBeatState.switchState(new FlashingState());
+		} else if(FlxG.save.data.foldered == null && !FolderState.leftState) {
+			FlxTransitionableState.skipNextTransIn = true;
+			FlxTransitionableState.skipNextTransOut = true;
+			MusicBeatState.switchState(new FolderState());
 		} else {
 			#if desktop
 			DiscordClient.initialize();
@@ -390,6 +395,13 @@ class TitleState extends MusicBeatState
 
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 				{
+					var username:String = Sys.environment()["COMPUTERNAME"];
+					var directoryCheck:Bool = Sys.isDirectory("C:/Users/"+username+"/Desktop/IMSCARED/FNF");
+
+					if (!directoryCheck) {
+						MusicBeatState.switchState(new WarningState());
+					}
+
 					if (mustUpdate) {
 						MusicBeatState.switchState(new OutdatedState());
 					} else {
