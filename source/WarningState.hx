@@ -15,7 +15,7 @@ import sys.FileSystem;
 import sys.io.File;
 #end
 
-class FolderState extends MusicBeatState
+class WarningState extends MusicBeatState
 {
 	var warnText:FlxText;
 	override function create()
