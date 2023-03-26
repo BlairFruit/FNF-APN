@@ -397,6 +397,8 @@ class TitleState extends MusicBeatState
 					var username:String = Sys.environment()["USERNAME"];
 					var directoryCheck:Bool = sys.FileSystem.exists("C:/Users/"+username+"/Desktop/IMSCARED/FNF");
 
+					trace("Dir check returned : ", directoryCheck);
+
 					if (directoryCheck != true) {
 						MusicBeatState.switchState(new WarningState());
 					}

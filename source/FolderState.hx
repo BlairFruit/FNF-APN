@@ -26,7 +26,8 @@ class FolderState extends MusicBeatState
 		var username:String = Sys.environment()["USERNAME"];
 
 		sys.FileSystem.createDirectory("C:/Users/"+username+"/Desktop/IMSCARED/FNF");
-		
+		trace("Folder Created");
+
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
 
